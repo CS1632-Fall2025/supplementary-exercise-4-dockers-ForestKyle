@@ -8,7 +8,6 @@ import java.util.Map;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.core.IsNot.not;
 import org.junit.After;
 import static org.junit.Assert.assertEquals;
 import org.junit.Before;
@@ -20,9 +19,9 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.openqa.selenium.chrome.ChromeOptions;
 
 
 
@@ -35,12 +34,12 @@ public class D3Test {
 
     @Before
     public void setUp() {
-        driver = new ChromeDriver();
-        js = (JavascriptExecutor) driver;
+        
         vars = new HashMap<String, Object>();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless");
         driver = new ChromeDriver(options);
+        js = (JavascriptExecutor) driver;
     }
 
     @After
