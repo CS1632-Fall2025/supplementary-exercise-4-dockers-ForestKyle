@@ -41,7 +41,7 @@ jobs:
         run: docker compose up -d
 
       - name: Make script executable
-        run: chmod +x ./your_script.sh
+        run: chmod +x ./wait-for-webserver.sh
 
       - name: Run script
         run: ./wait-for-webserver.sh
